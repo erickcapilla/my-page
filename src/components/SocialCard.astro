@@ -1,0 +1,13 @@
+---
+const { icon, name, url, color, background } = Astro.props;
+const Icon = icon;
+---
+
+<a
+  href={url}
+  target="_blank"
+  class=`flex items-center justify-between gap-1 px-2 ${background} ${color} font-semibold text-xs rounded-sm`
+>
+  <Icon />
+  <p>{name}</p>
+</a>

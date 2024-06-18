@@ -1,0 +1,41 @@
+---
+import SocialCard from './SocialCard.astro'
+import LinkedIn from './icons/LinkedIn.astro'
+import GitHub from './icons/GitHub.astro'
+import Twitter from './icons/Twitter.astro'
+import Mail from './icons/Mail.astro'
+const socialNetwork = [
+  {
+    name: 'X (Twitter)',
+    url: 'https://twitter.com/erickcapilla_',
+    icon: Twitter,
+    color: "text-black",
+    background: "bg-white"
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/erickcapilla',
+    icon: LinkedIn,
+    color: "text-white",
+    background: "bg-blue-700"
+  },
+  {
+    name: 'GitHub',
+    url: 'https://www.github.com/erickcapilla',
+    icon: GitHub,
+    color: "text-white",
+    background: "bg-black"
+  },
+  {
+    name: 'Mail',
+    url: 'mailto:erickpoblano25@gmail.com',
+    icon: Mail,
+    color: "text-white",
+    background: "bg-red-500"
+  },
+]
+---
+
+{socialNetwork.map((network) => (
+  <SocialCard {...network} />
+))}

@@ -1,0 +1,29 @@
+---
+import AboutIcon from "./icons/AboutIcon.astro";
+import ProjectsIcon from "./icons/ProjectsIcon.astro";
+import ContactIcon from "./icons/ContactIcon.astro";
+const navItems = [
+  { title: "About Me", href: "/", isActive: true, icon: AboutIcon },
+  { title: "Projects", href: "/projects", isActive: false, icon: ProjectsIcon },
+];
+---
+
+<header class="fixed border-b-[.5px] border-gray-500 w-full h-12 bg-[#00000A]">
+  <nav>
+    <ul class="flex gap-5 p-3">
+      {
+        navItems.map((link) => (
+          <li class="flex items-center gap-1">
+            <link.icon />
+            <a
+              href={link.href}
+              class={`hover:border-b-4 border-[rgb(var(--accent))] p-1 hover:text-[rgb(var(--accent))]`}
+            >
+              {link.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

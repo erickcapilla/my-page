@@ -1,0 +1,73 @@
+---
+import User from "../components/User.astro";
+import SocialList from "@/components/SocialList.astro";
+import Header from "@/components/Header.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Erick Capilla. I'm frontend developer with a strong foundation in computer engineering and extensive experience in graphic design. Skilled in creating intuitive, responsive, and visually appealing web applications using modern frontend technologies. Adept at working in collaborative environments, continuously learning new tools and techniques, and adapting quickly to project changes."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <aside
+      class="border-r-[0.5px] border-gray-500 h-screen max-w-96 w-full flex flex-col justify-between items-center px-3 py-5"
+    >
+      <div class="flex flex-col items-center">
+        <User />
+        <div class="w-full flex gap-2 flex-wrap justify-center mt-8">
+          <SocialList />
+        </div>
+      </div>
+      <a
+        href="/erickcapilla_cv.pdf"
+        download="erickcapilla_resume.pdf"
+        class="border border-[rgb(var(--accent))] py-3 px-1 w-full text-center rounded-md font-bold hover:bg-[rgb(var(--accent))]">Resume</a
+      >
+    </aside>
+    <main class="border-0 border-red-500 h-screen w-full overflow-y-auto">
+      <Header />
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 0, 255, 171;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, system-ui, sans-serif;
+    background: #00000a;
+    color: #fff;
+  }
+
+  body {
+    display: flex;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #00000a;
+  }
+</style>

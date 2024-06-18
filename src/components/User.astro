@@ -1,0 +1,32 @@
+---
+import Badge from "./icons/Badge.astro";
+import Code from "./icons/Code.astro";
+import Location from "./icons/Location.astro"
+---
+
+<article>
+  <picture
+    class="block border-4 border-[rgb(var(--accent))] rounded-[50%] w-48 h-48 overflow-hidden mb-3 mx-auto"
+  >
+    <img src="/perfil.jpg" alt="Erick Capilla's picture - selfie" />
+  </picture>
+  <section class="flex gap-2 mb-5">
+    <h1 class="font-bold text-3xl">Erick Capilla</h1>
+    <div class="relative mt-1 w-auto h-auto">
+      <Badge class="absolute top-0 size-8 text-[rgb(var(--accent))]" />
+      <Code
+        class="absolute top-[.50rem] left-[.50rem] size-4 text-[rgb(var(--accent))]"
+      />
+    </div>
+  </section>
+  <section>
+    <p class="font-extralight text-sm leading-5">
+      Creative Frontend Developer ✨ <br />
+      Software Engineer | Frontend | React
+    </p>
+  </section>
+  <section class="flex items-center gap-1 mt-1">
+    <Location class="text-gray-500" />
+    <p class="text-gray-500">Mexico</p>
+  </section>
+</article>
