@@ -23,11 +23,11 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="max-md:flex-col overflow-hidden">
     <aside
-      class="border-r-[0.5px] border-gray-500 h-screen max-w-96 w-full flex flex-col justify-between items-center px-3 py-5"
+      class="border-r-[0.5px] border-gray-500 md:h-screen md:max-w-96 w-full flex flex-wrap md-flex-col justify-between items-center px-3 py-5"
     >
-      <div class="flex flex-col items-center">
+      <div class="flex md:flex-col items-center">
         <User />
         <div class="w-full flex gap-2 flex-wrap justify-center mt-8">
           <SocialList />
@@ -36,7 +36,7 @@ const { title } = Astro.props;
       <a
         href="/erickcapilla_cv.pdf"
         download="erickcapilla_resume.pdf"
-        class="border border-[rgb(var(--accent))] py-3 px-1 w-full text-center rounded-md font-bold hover:bg-[rgb(var(--accent))]">Resume</a
+        class="border border-[rgb(var(--accent))] py-3 px-1 max-md:mt-2 w-full max-md:px-5 text-center rounded-md font-bold hover:bg-[rgb(var(--accent))]">Resume</a
       >
     </aside>
     <main class="border-0 border-red-500 h-screen w-full overflow-y-auto">
