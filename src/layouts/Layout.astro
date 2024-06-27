@@ -1,8 +1,4 @@
 ---
-import User from "../components/User.astro";
-import SocialList from "@/components/SocialList.astro";
-import Header from "@/components/Header.astro";
-
 interface Props {
   title: string;
 }
@@ -24,29 +20,12 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="max-md:flex-col">
-    <aside
-      class="border-r-[0.5px] border-gray-500 md:h-screen md:max-w-96 w-full flex flex-wrap md-flex-col justify-between items-center px-3 py-5"
-    >
-      <div class="flex md:flex-col items-center">
-        <User />
-        <div class="w-full flex gap-2 flex-wrap justify-center mt-8">
-          <SocialList />
-        </div>
-      </div>
-      <a
-        href="/erickcapilla_cv.pdf"
-        download="erickcapilla_resume.pdf"
-        class="border border-[rgb(var(--accent))] py-3 px-1 max-md:mt-2 w-full max-md:px-5 text-center rounded-md font-bold hover:bg-[rgb(var(--accent))]">Resume</a
-      >
-    </aside>
-    <main class="border-0 border-red-500 h-screen w-full md:overflow-y-auto">
-      <Header />
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>
 <style is:global>
   :root {
+    --primary: 0, 0, 10; 
     --accent: 0, 255, 171;
   }
 
@@ -58,16 +37,15 @@ const { title } = Astro.props;
 
   html {
     font-family: Verdana, Geneva, Tahoma, sans-serif, system-ui, sans-serif;
-    background: #00000a;
+    background: rgb(var(--primary));
     color: #fff;
   }
 
   body {
-    display: flex;
+    padding: 0 20px;
   }
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #00000a;
   }
 </style>
