@@ -2,7 +2,28 @@
 import AboutIcon from "./icons/AboutIcon.astro";
 import ProjectsIcon from "./icons/ProjectsIcon.astro";
 const navItems = [
-  { title: "About Me", path: "/", isActive: true, icon: AboutIcon },
-  { title: "Projects", path: "/projects", isActive: false, icon: ProjectsIcon },
+  { title: "Inicio", path: "/", isActive: true, icon: AboutIcon },
+  { title: "Acerca de mi", path: "/about", isActive: true, icon: AboutIcon },
+  {
+    title: "Proyectos",
+    path: "/projects",
+    isActive: false,
+    icon: ProjectsIcon,
+  },
 ];
 ---
+
+<nav class="h-full text-sm">
+  <ul class="flex justify-between h-full px-3">
+    {
+      navItems.map((item) => (
+        <a href={item.path}>
+          <li class="flex flex-col items-center justify-center h-full w-full px-2 text-center text-xs">
+            <item.icon />
+            {item.title}
+          </li>
+        </a>
+      ))
+    }
+  </ul>
+</nav>
