@@ -6,35 +6,13 @@ import Header from "@/components/Header.astro";
 ---
 
 <Layout title="Erick Capilla | Software engineer | Frontend Developer">
-  <header
-    class="sticky top-3 mx-auto max-w-3xl w-full h-16 backdrop-blur supports-backdrop-blur:bg-white/95 bg-white bg-opacity-5 rounded-2xl flex items-center justify-between px-3"
-  >
-    <section class="flex gap-2 items-center">
-      <picture class="block w-10 h-10 rounded-full overflow-hidden">
-        <img src="/perfil.jpg" alt="Erick Capilla's profile image" />
-      </picture>
-      <div class="flex flex-col">
-        <h1 class="text-sm font-bold">Erick Capilla</h1>
-        <a
-          href="https://www.linkedin.com/in/erickcapilla"
-          class="text-gray-500 text-sm underline">LinkedIn</a
-        >
-      </div>
-    </section>
-    <button
-      class="bg-[rgb(var(--accent))] px-2 py-1 font-bold text-sm text-[rgb(var(--primary))] rounded-md"
-      >Contactame</button
-    >
-  </header>
-  <div
-    class="fixed -z-50 top-0 right-0 w-screen h-screen bg-gradient-to-b from-transparent to-[rgb(var(--accent))] opacity-10"
-  >
+  <Header />
   </div>
-  <main class="border-2 mt-3">
+  <main class="border border-white h-[1500px] mt-3 max-w-3xl w-full mx-auto mb-12">
 		{}
 	</main>
   <footer
-    class="fixed bottom-0 left-0 max-w-3xl w-full h-12 backdrop-blur rounded-t-xl bg-white bg-opacity-5"
+    class="fixed bottom-0 left-1/2 translate-x-[-50%] max-w-3xl w-full h-12 backdrop-blur supports-backdrop-blur:bg-white/95 rounded-t-xl bg-white bg-opacity-5"
   >
     <nav class="h-full text-sm">
       <ul class="flex justify-between h-full px-3">
@@ -44,7 +22,7 @@ import Header from "@/components/Header.astro";
           Inicio
         </li>
         <li
-          class="flex items-center justify-center h-full w-full backdrop-blur px-2 text-center font-bold bg-opacity-5 border-t-[3px] border-[rgb(var(--accent))]"
+          class="flex items-center justify-center h-full w-full px-2 text-center backdrop-blur font-bold bg-opacity-5 border-t-[3px] border-[rgb(var(--accent))]"
         >
           Acerca de mi
         </li>

@@ -1,28 +1,24 @@
----
-import AboutIcon from "./icons/AboutIcon.astro";
-import ProjectsIcon from "./icons/ProjectsIcon.astro";
-const navItems = [
-  { title: "About Me", href: "/", isActive: true, icon: AboutIcon },
-  { title: "Projects", href: "/projects", isActive: false, icon: ProjectsIcon },
-];
----
-
-<header class="md:fixed z-50 border-b-[.5px] border-gray-500 w-full h-12 bg-[#00000A]">
-  <nav>
-    <ul class="flex gap-5 p-3">
-      {
-        navItems.map((link) => (
-          <li class="flex items-center gap-1">
-            <link.icon />
-            <a
-              href={link.href}
-              class={`hover:border-b-4 border-[rgb(var(--accent))] p-1 hover:text-[rgb(var(--accent))]`}
-            >
-              {link.title}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
-</header>
+<header
+    class="sticky top-3 mx-auto max-w-3xl w-full h-16 backdrop-blur-sm supports-backdrop-blur:bg-white/95 bg-white bg-opacity-5 rounded-2xl flex items-center gap-1 justify-between px-3 overflow-hidden"
+  >
+    <div
+      class="absolute -z-50 top-0 right-0 w-full h-full bg-gradient-to-r from-transparent to-[rgb(var(--accent))] opacity-10"
+    >
+    </div>
+    <section class="flex gap-2 items-center">
+      <picture class="block w-10 h-10 rounded-full overflow-hidden">
+        <img src="/perfil.jpg" alt="Erick Capilla's profile image" />
+      </picture>
+      <div class="flex flex-col">
+        <h1 class="text-sm font-bold">Erick Capilla</h1>
+        <a
+          href="https://www.linkedin.com/in/erickcapilla"
+          class="text-gray-500 text-sm underline">LinkedIn</a
+        >
+      </div>
+    </section>
+    <button
+      class="bg-[rgb(var(--accent))] px-2 py-1 font-bold text-sm text-[rgb(var(--primary))] rounded-md"
+      >Contactame</button
+    >
+  </header>

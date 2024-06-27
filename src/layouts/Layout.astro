@@ -21,11 +21,15 @@ const { title } = Astro.props;
   </head>
   <body class="max-md:flex-col">
     <slot />
+    <div
+      class="fixed -z-50 top-0 right-0 w-screen h-screen bg-gradient-to-b from-transparent to-[rgb(var(--accent))] opacity-15"
+    >
+    </div>
   </body>
 </html>
 <style is:global>
   :root {
-    --primary: 0, 0, 10; 
+    --primary: 0, 0, 10;
     --accent: 0, 255, 171;
   }
 
@@ -42,7 +46,7 @@ const { title } = Astro.props;
   }
 
   body {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
   * {
