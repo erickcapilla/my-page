@@ -3,15 +3,15 @@ import Card from "./Card.astro";
 
 const projects = [
   {
-    title: "SIGET - Degree process management system at FCBIyT",
-    Description: "System to improve the degree process in the Faculty of Basic Sciences, Engineering and Technology (FCBIyT). Optimize delivery times, reduce paper use and improve the process experience.",
+    title: "SIGET - Sistema de Gestión del proceso de titulación de la FCBIyT",
+    Description: "Sistema para mejorar el proceso de titulación en la Facultad de Ciencias Básicas, Ingeniería y Tecnología (FCBIyT). Optimiza los tiempos de entrega, reduce el uso de papel y mejora la experiencia del proceso.",
     img: "/Imagen2.png",
     url: "https://github.com/erickcapilla/siget",
     technologies: ["React", "Tailwind", "NextUI", "TypeScript"]
   },
   {
-    title: "XCELENT - Product catalog",
-    Description: "Product catalog, improves the sale of products that were previously sold through WhatsApp. Payments with PayPal, shipping tracking, view products without having an account.",
+    title: "XCELENT - Catálogo de Productos",
+    Description: "Catálogo de productos, mejora la venta de productos que anteriormente se vendían a través de WhatsApp. Pagos con PayPal, seguimiento de envíos, visualización de productos sin necesidad de tener una cuenta.",
     img: "/Imagen1.png",
     url: "https://github.com/erickcapilla/xcelente",
     technologies: ["React", "Tailwind", "NextUI", "Firebase", "PayPal", "TypeScript"]
@@ -19,7 +19,7 @@ const projects = [
 ];
 ---
 
-<article class="md:mt-12 py-3 px-5 grid gap-3">
+<article class="grid gap-3">
   {
     projects.map((project) => (
       <Card title={project.title} href={project.url}>
