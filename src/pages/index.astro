@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import User from "../components/User.astro";
-import SocialList from "@/components/SocialList.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro"
 ---
@@ -9,7 +8,8 @@ import Footer from "@/components/Footer.astro"
 <Layout title="Erick Capilla | Software engineer | Frontend Developer">
   <Header />
   </div>
-  <main class="border border-white mt-3 max-w-3xl w-full mx-auto mb-12">
+  <main class="mt-3 max-w-3xl w-full mx-auto mb-12 py-3">
+    <User />
 	</main>
   <Footer />
 </Layout>
