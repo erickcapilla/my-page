@@ -1,8 +1,9 @@
 ---
 import AboutIcon from "./icons/AboutIcon.astro";
 import ProjectsIcon from "./icons/ProjectsIcon.astro";
+import Home from "./icons/Home.astro"
 const navItems = [
-  { title: "Inicio", path: "/", isActive: true, icon: AboutIcon },
+  { title: "Inicio", path: "/", isActive: true, icon: Home },
   { title: "Acerca de mi", path: "/about", isActive: true, icon: AboutIcon },
   {
     title: "Proyectos",
@@ -14,13 +15,13 @@ const navItems = [
 ---
 
 <nav class="h-full text-sm">
-  <ul class="flex justify-between h-full px-3">
+  <ul class="flex items-center justify-between h-full px-3 gap-3">
     {
       navItems.map((item) => (
-        <a href={item.path}>
-          <li class="flex flex-col items-center justify-center h-full w-full px-2 text-center text-xs">
+        <a href={item.path} class="h-14 w-auto py-1">
+          <li class="flex flex-col items-center justify-between h-full w-full px-2 text-center text-xs">
             <item.icon />
-            {item.title}
+            <p>{item.title}</p>
           </li>
         </a>
       ))
