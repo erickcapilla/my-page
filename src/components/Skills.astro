@@ -1,0 +1,14 @@
+---
+import SkillPills from './SkillPills.astro';
+
+const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Astro', 'Tailwind']
+---
+
+<article class="max-w-4xl w-full">
+  <h2 class="text-3xl text-stone-300 font-bold mb-10">Habilidades</h2>
+  <div class="w-full flex flex-wrap gap-3 items-center justify-between">
+    {skills.map((skill) => (
+      <SkillPills>{skill}</SkillPills>
+    ))}
+  </div>
+</article>
