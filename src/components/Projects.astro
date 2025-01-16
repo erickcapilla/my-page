@@ -1,54 +1,46 @@
 ---
-import Card from "./Card.astro";
-import SkillPills from './SkillPills.astro'
-
-const projects = [
-  {
-    title: "SIGET - Sistema de Gestión del proceso de titulación de la FCBIyT",
-    Description:
-      "Sistema para mejorar el proceso de titulación en la Facultad de Ciencias Básicas, Ingeniería y Tecnología (FCBIyT). Optimiza los tiempos de entrega, reduce el uso de papel y mejora la experiencia del proceso.",
-    img: "/Imagen2.png",
-    url: "https://github.com/erickcapilla/siget",
-    technologies: ["React", "Tailwind", "NextUI", "TypeScript"],
-  },
-  {
-    title: "XCELENT - Catálogo de Productos",
-    Description:
-      "Catálogo de productos, mejora la venta de productos que anteriormente se vendían a través de WhatsApp. Pagos con PayPal, seguimiento de envíos, visualización de productos sin necesidad de tener una cuenta.",
-    img: "/Imagen1.png",
-    url: "https://github.com/erickcapilla/xcelente",
-    technologies: [
-      "React",
-      "Tailwind",
-      "NextUI",
-      "Firebase",
-      "PayPal",
-      "TypeScript",
-    ],
-  },
-];
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardFooter,
+} from "@/components/ui/cardui";
+import { Badge } from "@/components/ui/badge";
+import { technologies } from "@/data/technologies";
+import { projects } from "@/data/projects";
+import { Github } from "@react-symbols/icons";
 ---
 
 <article class="grid gap-3">
-  <h2 class="text-3xl text-stone-300 font-bold mb-5">Proyectos</h2>
+  <h2 class="text-xl font-bold mb-5">Projects</h2>
   {
     projects.map((project) => (
-      <Card title={project.title} href={project.url}>
-        <div class="flex max-md:flex-col items-center gap-2">
-          <img
-            src={project.img}
-            alt={project.title}
-            class="md:w-1/2 h-48 object-cover rounded-md"
-          />
-          <div class="md:w-1/2 py-2">
-            {project.technologies.map((tech) => (
-              <span class="inline-block w-auto border-2 border-stone-500 px-2 py-1 rounded-full mr-2 mb-2">
-                {tech}
-              </span>
-            ))}
-            <p class="mt-2">{project.Description}</p>
+      <Card className="rounded-sm">
+        <CardHeader>
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold">{project.title}</h3>
+            <a
+              href={project.url}
+              target="_blank"
+              class="text-xs dark:text-gray-400 text-gray-700 dark:hover:text-white hover:text-zinc-950"
+            >
+              <Github className="size-7" />
+            </a>
           </div>
-        </div>
+        </CardHeader>
+        <CardContent>
+          <p class="text-xs text-gray-700 dark:text-gray-300">{project.Description}</p>
+        </CardContent>
+        <CardFooter className="flex flex-wrap gap-2">
+          {technologies.map(
+            (tech) =>
+              project.technologies.includes(tech.name) && (
+                <Badge variant="outline">
+                  <tech.icon className="size-5 mr-2" /> {tech.name}
+                </Badge>
+              )
+          )}
+        </CardFooter>
       </Card>
     ))
   }
