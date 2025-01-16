@@ -1,0 +1,18 @@
+---
+const { company, description, rol, time, url } = Astro.props;
+---
+
+<li class=" grid gap-3 ">
+  <div
+    class="absolute -left-[7px] z-20 bg-background size-3 rounded-full border-2 border-gray-700 dark:border-gray-500"
+  >
+  </div>
+  <span class="text-xs text-gray-700 dark:text-gray-300">{time}</span>
+  <div>
+    <h3 class="font-bold text-2xl">{rol}</h3>
+    <a href={url} target="_blank" class="text-xs underline underline-offset-2"
+      >{company}</a
+    >
+  </div>
+  <p class="text-gray-700 dark:text-gray-300">{description}</p>
+</li>

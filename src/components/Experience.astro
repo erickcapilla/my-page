@@ -1,0 +1,11 @@
+---
+import { experience } from '@/data/experience'
+import ExperienceItem from '@/components/ExperienceItem.astro'
+---
+<section>
+  <h2 class="text-xl font-bold mb-5">Experience</h2>
+  <ul class="relative -z-10 grid gap-10 ml-2 border-l-2 border-gray-700 dark:border-gray-700 p-5 h-fit">
+    {experience.map((exp) => (
+      <ExperienceItem {...exp} />
+    ))}
+</section>
