@@ -9,10 +9,10 @@ const { company, description, rol, time, url } = Astro.props;
   </div>
   <span class="text-xs text-gray-700 dark:text-gray-300">{time}</span>
   <div>
-    <h3 class="font-bold text-2xl">{rol}</h3>
+    <h3 class="font-bold text-xl">{rol}</h3>
     <a href={url} target="_blank" class="text-xs underline underline-offset-2"
       >{company}</a
     >
   </div>
-  <p class="text-gray-700 dark:text-gray-300">{description}</p>
+  <p class="text-gray-700 dark:text-gray-300 text-xs">{description}</p>
 </li>
